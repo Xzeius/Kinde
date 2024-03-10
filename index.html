@@ -1,45 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your HTML Project</title>
-    <!-- Import Kinde client library -->
-    <script src="https://cdn.jsdelivr.net/npm/@kinde-oss/kinde-auth-pkce-js/dist/kinde-auth-pkce.min.js"></script>
-</head>
-<body>
-    <!-- Your HTML content goes here -->
-    <h1>Welcome to Your HTML Project</h1>
-
-    <!-- Sign-up and sign-in buttons -->
-    <div id="logged_out_view">
-        <button id="login" type="button">Login</button>
-        <button id="register" type="button">Register</button>
-    </div>
-
-    <!-- Include your custom JavaScript file -->
-    <script src="main.js"></script>
-
-    <script>
-        // Execute this JavaScript code after the DOM content has been loaded
-        document.addEventListener("DOMContentLoaded", async () => {
-            // Initialize Kinde client
-            const kinde = await createKindeClient({
-                client_id: "3d39e4c74dda4a1abc434f23788b33fd",
-                domain: "https://noteshare.kinde.com",
-                redirect_uri: window.location.origin
-            });
-
-            // Event listener for login button
-            document.getElementById("login").addEventListener("click", async () => {
-                await kinde.login();
-            });
-
-            // Event listener for register button
-            document.getElementById("register").addEventListener("click", async () => {
-                await kinde.register();
-            });
-        });
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinde React App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="main.jsx"></script>
+  </body>
 </html>

@@ -19,5 +19,27 @@
 
     <!-- Include your custom JavaScript file -->
     <script src="main.js"></script>
+
+    <script>
+        // Execute this JavaScript code after the DOM content has been loaded
+        document.addEventListener("DOMContentLoaded", async () => {
+            // Initialize Kinde client
+            const kinde = await createKindeClient({
+                client_id: "3d39e4c74dda4a1abc434f23788b33fd",
+                domain: "https://noteshare.kinde.com",
+                redirect_uri: window.location.origin
+            });
+
+            // Event listener for login button
+            document.getElementById("login").addEventListener("click", async () => {
+                await kinde.login();
+            });
+
+            // Event listener for register button
+            document.getElementById("register").addEventListener("click", async () => {
+                await kinde.register();
+            });
+        });
+    </script>
 </body>
 </html>
